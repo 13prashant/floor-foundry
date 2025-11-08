@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import ThumbnailSkeleton from "./thumbnail-skeleton";
 import { PDF_THUMBNAIL_SIZE } from "@/utils/constants";
+import Image from "next/image";
 
 // Dynamically import PDF viewer component
 const PDFViewer = dynamic(
@@ -40,10 +41,17 @@ export default function PDFThumbnail({
         <p className="font-extrabold text-xl">{pdf.name}</p>
         <p className="text-gray-600 font-medium">{pdf.description ?? ""}</p>
       </div>
-      <PDFViewer
+      {/* <PDFViewer
         pdfFileUrl={pdfFileUrl}
         pageNumber={pdf.thumbnailPage}
         height={thumbnailPageSize}
+      /> */}
+      <Image
+        src={pdf.thumbnail}
+        alt={pdf.name}
+        width={thumbnailPageSize}
+        height={thumbnailPageSize}
+        className="rounded-lg object-cover"
       />
     </Link>
   );

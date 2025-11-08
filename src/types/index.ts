@@ -3,6 +3,7 @@ export interface BrochurePDF {
   name: string;
   description?: string;
   thumbnailPage: number;
+  thumbnail: string;
 }
 
 export interface BrochureCategory {
