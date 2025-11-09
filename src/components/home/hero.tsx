@@ -1,16 +1,153 @@
+"use client";
+
+import { easeInOut, motion } from "motion/react";
+import { Button } from "../ui/button";
+import Container from "../ui/container";
+import Heading from "../ui/heading";
+
 export default function Hero() {
-  return (
-    <section className="max-w-7xl mx-auto border-x border-gray-300 p-32">
-      <p className="text-center text-md font-medium tracking-tight text-gray-600 mx-auto mt-6 max-w-lg">
-        Premium Flooring & Surface Materials
-      </p>
-      <h1 className="text-center text-3xl font-medium tracking-tight md:text-4xl lg:text-6xl mt-4">
-        Find the Perfect Surface <br /> for Your Project
-      </h1>
-      <h2 className="text-center text-lg font-medium tracking-tight text-gray-600 mx-auto mt-6 max-w-lg">
-        Explore a curated range of fine stones, woods, and finishes, <br />
-        crafted to elevate every space.
-      </h2>
-    </section>
-  );
+   return (
+      <Container className="relative z-40 border-x border-gray-300" as="section">
+         <p className="md:text-md text-brand mx-auto max-w-lg text-center text-sm font-bold tracking-tight">
+            Premium Flooring & Surface Materials
+         </p>
+
+         <Heading
+            as="h1"
+            text="Find the Perfect Surface for Your Project"
+            className="mx-auto mt-4 max-w-2xl text-center"
+         />
+         <h2 className="mx-auto mt-6 w-fit max-w-lg text-center text-sm font-medium tracking-tight text-balance text-gray-600 md:text-lg">
+            Explore a curated range of fine stones, woods, and finishes, <br />
+            crafted to elevate every space.
+         </h2>
+
+         <div className="mx-auto mt-10 flex w-fit items-center justify-center gap-6">
+            <Button>Browse Products</Button>
+            <Button variant="outline">Contact Today</Button>
+         </div>
+
+         <FlooringTiles />
+      </Container>
+   );
+}
+
+function FlooringTiles() {
+   return (
+      <motion.div
+         initial={{
+            translateX: 100,
+            filter: "blur(16px)",
+         }}
+         animate={{
+            translateX: 0,
+            filter: "blur(0px)",
+            transition: {
+               duration: 0.5,
+               ease: easeInOut,
+            },
+         }}
+         className="absolute -right-2 bottom-0 -z-10 grid w-[70%] grid-cols-7 mask-t-from-0% mask-t-to-70% md:w-[840px] md:mask-t-to-100% md:mask-l-from-0% md:mask-l-to-110%"
+      >
+         <motion.div
+            whileHover={{
+               background: "oklch(76.932% 0.082 80.998 / 0.1)",
+            }}
+            className="col-span-1 h-8 border-0 border-dashed border-gray-300 md:h-16"
+         />
+         <motion.div
+            whileHover={{
+               background: "oklch(76.932% 0.082 80.998 / 0.1)",
+            }}
+            className="col-span-1 h-8 border-0 border-dashed border-gray-300 md:h-16"
+         />
+         <motion.div
+            whileHover={{
+               background: "oklch(76.932% 0.082 80.998 / 0.1)",
+            }}
+            className="col-span-1 h-8 border-0 border-dashed border-gray-300 md:h-16"
+         />
+         <motion.div
+            whileHover={{
+               background: "oklch(76.932% 0.082 80.998 / 0.1)",
+            }}
+            className="width-32 col-span-4 h-8 border border-r-0 border-dashed border-gray-300 md:h-16"
+         />
+
+         <motion.div
+            whileHover={{
+               background: "oklch(76.932% 0.082 80.998 / 0.1)",
+            }}
+            className="col-span-2 h-8 border border-dashed border-gray-300 md:h-16"
+         />
+         <motion.div
+            whileHover={{
+               background: "oklch(76.932% 0.082 80.998 / 0.1)",
+            }}
+            className="col-span-2 h-8 border border-dashed border-gray-300 md:h-16"
+         />
+         <motion.div
+            whileHover={{
+               background: "oklch(76.932% 0.082 80.998 / 0.1)",
+            }}
+            className="col-span-1 h-8 border border-dashed border-gray-300 md:h-16"
+         />
+         <motion.div
+            whileHover={{
+               background: "oklch(76.932% 0.082 80.998 / 0.1)",
+            }}
+            className="width-32 col-span-2 h-8 border border-r-0 border-dashed border-gray-300 md:h-16"
+         />
+
+         <motion.div
+            whileHover={{
+               background: "oklch(76.932% 0.082 80.998 / 0.1)",
+            }}
+            className="col-span-1 h-8 border border-l-0 border-dashed border-gray-300 md:h-16"
+         />
+         <motion.div
+            whileHover={{
+               background: "oklch(76.932% 0.082 80.998 / 0.1)",
+            }}
+            className="col-span-2 h-8 border border-dashed border-gray-300 md:h-16"
+         />
+         <motion.div
+            whileHover={{
+               background: "oklch(76.932% 0.082 80.998 / 0.1)",
+            }}
+            className="col-span-3 h-8 border border-dashed border-gray-300 md:h-16"
+         />
+         <motion.div
+            whileHover={{
+               background: "oklch(76.932% 0.082 80.998 / 0.1)",
+            }}
+            className="width-32 col-span-1 h-8 border border-r-0 border-dashed border-gray-300 md:h-16"
+         />
+
+         <motion.div
+            whileHover={{
+               background: "oklch(76.932% 0.082 80.998 / 0.1)",
+            }}
+            className="col-span-2 h-8 border border-b-0 border-dashed border-gray-300 md:h-16"
+         />
+         <motion.div
+            whileHover={{
+               background: "oklch(76.932% 0.082 80.998 / 0.1)",
+            }}
+            className="col-span-2 h-8 border border-b-0 border-dashed border-gray-300 md:h-16"
+         />
+         <motion.div
+            whileHover={{
+               background: "oklch(76.932% 0.082 80.998 / 0.1)",
+            }}
+            className="col-span-1 h-8 border border-b-0 border-dashed border-gray-300 md:h-16"
+         />
+         <motion.div
+            whileHover={{
+               background: "oklch(76.932% 0.082 80.998 / 0.1)",
+            }}
+            className="width-32 col-span-2 h-8 border border-r-0 border-b-0 border-dashed border-gray-300 md:h-16"
+         />
+      </motion.div>
+   );
 }

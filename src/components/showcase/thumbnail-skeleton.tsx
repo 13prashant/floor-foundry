@@ -1,4 +1,4 @@
-import { PDF_THUMBNAIL_SIZE } from "@/utils/constants";
+import { PDF_THUMBNAIL_SIZE } from "@/lib/constants";
 
 export default function ThumbnailSkeleton() {
   return (

@@ -1,6 +1,6 @@
 import { BrochureCategory } from "@/types";
 import PDFThumbnail from "./pdf-thumbnail";
-import { PDF_THUMBNAIL_SIZE } from "@/utils/constants";
+import { PDF_THUMBNAIL_SIZE } from "@/lib/constants";
 
 interface BrouchersListProps {
   brouchers: BrochureCategory[];
