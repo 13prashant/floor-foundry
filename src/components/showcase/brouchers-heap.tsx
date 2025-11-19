@@ -28,9 +28,12 @@ export const BrouchersHeap = ({
       }
    }, [autoplay]);
 
-   const randomRotateY = () => {
-      // eslint-disable-next-line react-hooks/purity
-      return Math.floor(Math.random() * 21) - 10;
+   // Generate deterministic rotation for each index
+   const getRotation = (index: number) => {
+      // Use a seeded pseudo-random function for SSR/client match
+      // This is a simple hash based on index, but you can use a better one if needed
+      const base = ((index * 9301 + 49297) % 233280) / 233280;
+      return Math.floor(base * 21) - 10;
    };
    return (
       <div className="relative max-w-fit flex-1">
@@ -43,13 +46,13 @@ export const BrouchersHeap = ({
                         opacity: 0,
                         scale: 0.9,
                         z: -100,
-                        rotate: randomRotateY(),
+                        rotate: getRotation(index),
                      }}
                      animate={{
                         opacity: isActive(index) ? 1 : 0.7,
                         scale: isActive(index) ? 1 : 0.95,
                         z: isActive(index) ? 0 : -100,
-                        rotate: isActive(index) ? 0 : randomRotateY(),
+                        rotate: isActive(index) ? 0 : getRotation(index),
                         zIndex: isActive(index) ? 40 : brochureThumbnails.length + 2 - index,
                         y: isActive(index) ? [0, -80, 0] : 0,
                      }}
@@ -57,7 +60,7 @@ export const BrouchersHeap = ({
                         opacity: 0,
                         scale: 0.9,
                         z: 100,
-                        rotate: randomRotateY(),
+                        rotate: getRotation(index),
                      }}
                      transition={{
                         duration: 0.4,
