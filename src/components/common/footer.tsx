@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../ui/button";
 import Container from "../ui/container";
 import { products } from "./helpers";
@@ -15,10 +16,16 @@ export default function Footer() {
                   </Button>
                </div>
                <div>
-                  <h3 className="mb-2 font-semibold text-gray-600">Products</h3>
+                  <h3 className="mb-2 font-semibold text-gray-400">Products</h3>
                   <ul className="flex flex-col gap-1">
                      {products.map((product) => (
-                        <li key={product.id}>{product.name}</li>
+                        <Link
+                           key={product.link}
+                           href={product.link}
+                           className="font-medium hover:text-gray-600"
+                        >
+                           {product.name}
+                        </Link>
                      ))}
                   </ul>
                </div>

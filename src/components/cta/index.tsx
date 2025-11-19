@@ -13,7 +13,7 @@ export default function Cta() {
                <Boxes />
                <div className="relative z-20 flex flex-col items-center gap-6">
                   <h1 className={cn("text-center text-xl font-bold md:text-4xl")}>
-                     Start your next project with the right materials.
+                     Start your next project <br /> with the right materials.
                   </h1>
                   <Button className="w-fit" size="lg">
                      Contact us Today

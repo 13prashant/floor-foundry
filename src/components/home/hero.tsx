@@ -4,6 +4,7 @@ import { easeInOut, motion } from "motion/react";
 import { Button } from "../ui/button";
 import Container from "../ui/container";
 import Heading from "../ui/heading";
+import Link from "next/link";
 
 export default function Hero() {
    return (
@@ -19,11 +20,18 @@ export default function Hero() {
          />
          <h2 className="mx-auto mt-6 w-fit max-w-lg text-center text-sm font-medium tracking-tight text-balance text-gray-600 md:text-lg">
             Explore a curated range of fine stones, woods, and finishes, <br />
-            crafted to elevate every space.
+            <span className="font-bold">crafted to elevate every space.</span>
          </h2>
 
-         <div className="mx-auto mt-10 flex w-fit items-center justify-center gap-6">
-            <Button>Browse Products</Button>
+         <div className="mx-auto mt-10 flex w-fit flex-col items-center justify-center gap-4 md:flex-row md:gap-6">
+            <Button>
+               <Link
+                  href="https://drive.google.com/drive/folders/1vwqFJpYO0muCz9kwJduAMh13T-U7OiXq"
+                  target="_blank"
+               >
+                  Browse Products
+               </Link>
+            </Button>
             <Button variant="outline">Contact Today</Button>
          </div>
 
