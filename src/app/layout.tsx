@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Raleway } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common/header";
+import Footer from "@/components/common/footer";
 
 const geistSans = Geist({
    variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({
          <body className={`${geistSans.variable} ${raleway.variable} bg-gray-50 antialiased`}>
             <Header />
             {children}
+            <Footer />
          </body>
       </html>
    );
